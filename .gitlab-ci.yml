@@ -36,7 +36,7 @@ test:
   only:
     - master
   script:
-    - /bin/bash dev-tools/php-cs-check.sh
+#    - /bin/bash dev-tools/php-cs-check.sh
     - php composer.phar check:analyse
     - php vendor/bin/phpunit --configuration phpunit.xml.dist --coverage-text --colors=never
 

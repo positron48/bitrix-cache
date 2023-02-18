@@ -706,7 +706,7 @@ class CacheTest extends CacheFixture
     /**
      * @return array<string, array>
      */
-    public function incorrectTTLDataProvider(): array
+    public static function incorrectTTLDataProvider(): array
     {
         return [
             'zero'     => [0],
@@ -790,7 +790,7 @@ class CacheTest extends CacheFixture
     /**
      * @return array<array>
      */
-    public function incorrectExpirationTimeDataProvider(): array
+    public static function incorrectExpirationTimeDataProvider(): array
     {
         return [
             'a second ago' => [(new DateTimeImmutable())->sub(new DateInterval('PT1S'))],
@@ -921,7 +921,7 @@ class CacheTest extends CacheFixture
     /**
      * @return array<array>
      */
-    public function incorrectBaseDirDataProvider(): array
+    public static function incorrectBaseDirDataProvider(): array
     {
         return [
             'starts_with_slash'      => ['/base'],
@@ -1002,7 +1002,7 @@ class CacheTest extends CacheFixture
     /**
      * @return array<string, array>
      */
-    public function invalidIblockIdDataProvider(): array
+    public static function invalidIblockIdDataProvider(): array
     {
         return [
             'zero'     => [0],
@@ -1036,7 +1036,7 @@ class CacheTest extends CacheFixture
     /**
      * @return array<array>
      */
-    public function mixedTTLDataProvider(): array
+    public static function mixedTTLDataProvider(): array
     {
         return [
             'null'         => [Cache::DEFAULT_TTL, null],
@@ -1160,7 +1160,7 @@ class CacheTest extends CacheFixture
     /**
      * @return array<array<string>>
      */
-    public function pathByClassDataProvider(): array
+    public static function pathByClassDataProvider(): array
     {
         return [
             [DateTimeImmutable::class, '/DateTimeImmutable'],

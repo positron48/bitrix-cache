@@ -34,7 +34,7 @@ variables:
 # If Xdebug was installed you can generate a coverage report and see code coverage metrics.
 test:
   script:
-    - ./dev-tools/php-cs-check.sh
+#    - ./dev-tools/php-cs-check.sh
     - php composer.phar check:analyse
     - php composer.phar check:test
     

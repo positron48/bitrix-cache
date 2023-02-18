@@ -42,3 +42,4 @@ test:
     - php composer.phar check:analyse
     - php vendor/bin/phpunit --configuration phpunit.xml.dist --coverage-text --colors=never
 
+  coverage: '/^\s*Lines:\s*\d+.\d+\%/'

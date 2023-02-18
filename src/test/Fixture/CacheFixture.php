@@ -20,7 +20,6 @@ use WebArch\BitrixTaxidermist\Taxidermist;
 
 class CacheFixture extends TestCase
 {
-
     /**
      * @var string
      */

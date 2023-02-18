@@ -29,6 +29,8 @@ before_script:
 # Set any variables we need
 variables:
   XDEBUG_MODE: coverage
+  # php-cs-fixer still has no native php8.2 support
+  PHP_CS_FIXER_IGNORE_ENV: 1
 
 # Run our tests
 # If Xdebug was installed you can generate a coverage report and see code coverage metrics.
@@ -36,7 +38,7 @@ test:
   only:
     - master
   script:
-#    - /bin/bash dev-tools/php-cs-check.sh
+    - /bin/bash dev-tools/php-cs-check.sh
     - php composer.phar check:analyse
     - php vendor/bin/phpunit --configuration phpunit.xml.dist --coverage-text --colors=never
 

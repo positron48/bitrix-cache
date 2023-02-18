@@ -7,7 +7,7 @@
 # https://gitlab.com/gitlab-org/gitlab/-/blob/master/lib/gitlab/ci/templates/PHP.gitlab-ci.yml
 
 # Select image from https://hub.docker.com/_/php/
-image: php:latest
+image: php:8.2
 
 # Select what we should cache between builds
 cache:
@@ -16,9 +16,9 @@ cache:
 
 before_script:
   - apt-get update -yqq
-  - apt-get install -yqq git libpq-dev libcurl4-gnutls-dev libicu-dev libvpx-dev libjpeg-dev libpng-dev libxpm-dev zlib1g-dev libfreetype6-dev libxml2-dev libexpat1-dev libbz2-dev libgmp3-dev libldap2-dev unixodbc-dev libsqlite3-dev libaspell-dev libsnmp-dev libpcre3-dev libtidy-dev libonig-dev libzip-dev
+  - apt-get install -yqq git
   # Install PHP extensions
-  - docker-php-ext-install mbstring pdo_pgsql curl intl gd xml zip bz2 opcache
+  - docker-php-ext-install mbstring opcache
   # Install & enable Xdebug for code coverage reports
   - pecl install xdebug
   - docker-php-ext-enable xdebug
@@ -33,8 +33,10 @@ variables:
 # Run our tests
 # If Xdebug was installed you can generate a coverage report and see code coverage metrics.
 test:
+  only:
+    - master
   script:
 #    - ./dev-tools/php-cs-check.sh
     - php composer.phar check:analyse
-    - php composer.phar check:test
+    - php vendor/bin/phpunit --configuration phpunit.xml.dist --coverage-text --colors=never
     

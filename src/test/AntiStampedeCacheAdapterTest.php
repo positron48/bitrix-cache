@@ -23,7 +23,6 @@ class AntiStampedeCacheAdapterTest extends AntiStampedeCacheAdapterFixture
     }
 
     /**
-     * @phpstan-ignore-next-line
      * @throws InvalidArgumentException
      * @return void
      */
@@ -58,7 +57,6 @@ class AntiStampedeCacheAdapterTest extends AntiStampedeCacheAdapterFixture
     }
 
     /**
-     * @phpstan-ignore-next-line
      * @throws InvalidArgumentException
      * @return void
      */
@@ -94,7 +92,6 @@ class AntiStampedeCacheAdapterTest extends AntiStampedeCacheAdapterFixture
     }
 
     /**
-     * @phpstan-ignore-next-line
      * @throws InvalidArgumentException
      * @return void
      */
@@ -129,7 +126,6 @@ class AntiStampedeCacheAdapterTest extends AntiStampedeCacheAdapterFixture
     /**
      * @throws InvalidArgumentException
      * @return void
-     * @phpstan-ignore-next-line
      */
     public function testGetWithTagMisses(): void
     {
@@ -171,7 +167,6 @@ class AntiStampedeCacheAdapterTest extends AntiStampedeCacheAdapterFixture
     /**
      * @throws InvalidArgumentException
      * @return void
-     * @phpstan-ignore-next-line
      */
     public function testGetWithMultipleTagsMisses(): void
     {
@@ -219,7 +214,6 @@ class AntiStampedeCacheAdapterTest extends AntiStampedeCacheAdapterFixture
     /**
      * @throws InvalidArgumentException
      * @return void
-     * @phpstan-ignore-next-line
      */
     public function testGetWithTagHits(): void
     {
@@ -258,7 +252,6 @@ class AntiStampedeCacheAdapterTest extends AntiStampedeCacheAdapterFixture
     }
 
     /**
-     * @phpstan-ignore-next-line
      * @throws InvalidArgumentException
      * @return void
      */
@@ -298,7 +291,6 @@ class AntiStampedeCacheAdapterTest extends AntiStampedeCacheAdapterFixture
 
     /**
      * @throws InvalidArgumentException
-     * @phpstan-ignore-next-line
      */
     public function testIfCacheIsNotTaggable(): void
     {
@@ -328,7 +320,6 @@ class AntiStampedeCacheAdapterTest extends AntiStampedeCacheAdapterFixture
 
     /**
      * @throws InvalidArgumentException
-     * @phpstan-ignore-next-line
      */
     public function testInvalidTag(): void
     {
@@ -360,7 +351,6 @@ class AntiStampedeCacheAdapterTest extends AntiStampedeCacheAdapterFixture
 
     /**
      * @throws InvalidArgumentException
-     * @phpstan-ignore-next-line
      */
     public function testEmptyTag(): void
     {
@@ -389,7 +379,6 @@ class AntiStampedeCacheAdapterTest extends AntiStampedeCacheAdapterFixture
 
     /**
      * @throws InvalidArgumentException
-     * @phpstan-ignore-next-line
      */
     public function testInvalidCharsTag(): void
     {
@@ -417,7 +406,6 @@ class AntiStampedeCacheAdapterTest extends AntiStampedeCacheAdapterFixture
     }
 
     /**
-     * @phpstan-ignore-next-line
      * @throws InvalidArgumentException
      * @return void
      */

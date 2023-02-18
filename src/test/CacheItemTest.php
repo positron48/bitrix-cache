@@ -159,7 +159,6 @@ class CacheItemTest extends CacheItemFixture
     }
 
     /**
-     * @phpstan-ignore-next-line
      * @throws CacheException
      * @throws \Psr\Cache\InvalidArgumentException
      * @return void

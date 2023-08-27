@@ -869,7 +869,7 @@ class Cache implements CacheInterface
      */
     private function assertTTL(int $ttl): int
     {
-        if ($ttl <= 0) {
+        if ($ttl < 0) {
             throw new InvalidArgumentException(
                 'TTL must be positive number or zero.',
                 ErrorCode::NEGATIVE_OR_ZERO_TTL

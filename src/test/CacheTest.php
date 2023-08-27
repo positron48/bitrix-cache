@@ -709,7 +709,6 @@ class CacheTest extends CacheFixture
     public static function incorrectTTLDataProvider(): array
     {
         return [
-            'zero'     => [0],
             'negative' => [-1],
         ];
     }

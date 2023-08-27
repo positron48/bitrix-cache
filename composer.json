@@ -78,5 +78,6 @@
       "type": "ЮMoney",
       "url": "https://sobe.ru/na/bitrix_cache"
     }
-  ]
+  ],
+  "version": "v1.11.5"
 }

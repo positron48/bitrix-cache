@@ -29,7 +29,7 @@
   "require": {
     "php": "^7.2 || ^8.0 || ^8.2",
     "psr/cache": "^2.0",
-    "psr/log": "^1.1",
+    "psr/log": "^1.1 || ^2 || ^3",
     "psr/simple-cache": "^1.0",
     "symfony/contracts": "^1.1.8 || ^2.0 || ^3.0",
     "symfony/polyfill-php80": "^1.18"
@@ -79,5 +79,5 @@
       "url": "https://sobe.ru/na/bitrix_cache"
     }
   ],
-  "version": "v1.11.5"
+  "version": "v1.11.6"
 }

@@ -177,6 +177,10 @@ class AntiStampedeCacheAdapterTest extends AntiStampedeCacheAdapterFixture
                     ->method('getMultiple')
                     ->willReturn([$this->key => $this->cacheMissValue]);
 
+        $this->cache->expects($this->exactly(2))
+                    ->method('addTag')
+                    ->willReturnSelf();
+
         $this->cache->expects($this->once())
                     ->method('set');
 
@@ -188,16 +192,6 @@ class AntiStampedeCacheAdapterTest extends AntiStampedeCacheAdapterFixture
 
         $this->cache->expects($this->never())
                     ->method('has');
-
-        $this->cache->expects($this->at(++$callCount))
-                    ->method('addTag')
-                    ->with($tag1)
-                    ->willReturnSelf();
-
-        $this->cache->expects($this->at(++$callCount))
-                    ->method('addTag')
-                    ->with($tag2)
-                    ->willReturnSelf();
 
         $value = $this->cacheAdapter->get(
             $this->key,
@@ -217,8 +211,6 @@ class AntiStampedeCacheAdapterTest extends AntiStampedeCacheAdapterFixture
      */
     public function testGetWithTagHits(): void
     {
-        $tag = 'fooCacheTag';
-
         $this->cache->expects($this->once())
                     ->method('getMultiple')
                     ->willReturn([$this->key => $this->cachedValue]);
@@ -240,9 +232,9 @@ class AntiStampedeCacheAdapterTest extends AntiStampedeCacheAdapterFixture
 
         $value = $this->cacheAdapter->get(
             $this->key,
-            function (CacheItem $cacheItem) use ($tag) {
+            function (CacheItem $cacheItem) {
                 $cacheItem->expiresAfter(60)
-                          ->tag($tag);
+                          ->tag('fooCacheTag');
 
                 throw new CommonLogicException('This closure should not be called, if the cache hits!');
             }
